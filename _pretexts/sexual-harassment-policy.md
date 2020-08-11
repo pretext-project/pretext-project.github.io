@@ -12,31 +12,32 @@ long-description: >
   sends the victim to a phishing page in order to "sign" for the new policy.
 goals:
   - malware
+  - cred harvest
 methods:
   - email
 payloads:
-  - PDF
-  - DOC
-  - DOCX
-  - Click-once
-  - Phishing page
-  - HTA
+  - pdf
+  - doc
+  - docx
+  - click-once
+  - phishing page
+  - hta
 sample-payloads:
-  payload:
-    type: DOC
-    description: Word document containing the new policy. Require employees to enable macros in order to "sign" for it. Could dress up the document to look rather legit + include instructions for enabling macros to "sign".
-  payload:
-    type: HTA
-    description: HTA application that shows the employee the policy and then has a page asking them to sign.
-  payload:
-    type: Click-once
-    description: Similar to the HTA idea. Employee must run the click once application in order to view and then sign the policy.
+  - payload:
+      type: doc
+      description: Word document containing the new policy. Require employees to enable macros in order to "sign" for it. Could dress up the document to look rather legit + include instructions for enabling macros to "sign".
+  - payload:
+      type: hta
+      description: HTA application that shows the employee the policy and then has a page asking them to sign.
+  - payload:
+      type: click-once
+      description: Similar to the HTA idea. Employee must run the click once application in order to view and then sign the policy.
 examples:
   - type: email
     email-properties:
       - from: Corporate HR
       - subject: "Action Required: new sexual harassment policy"
-      - body: |
+      - body: | 
           Dear colleagues,
 
           Due to the recent #MeToo movement, our firm has decided to update our sexual harassment policy. All employees are required to abide by these new regulations. To ensure everyone has read them, we require that you download the following policy and electronically sign acknowledging receipt. If you have any questions, please contact the HR department.

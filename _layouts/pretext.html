@@ -21,6 +21,7 @@
   
 </head>
 <body class="landing-page">
+
   <!-- Navbar -->
   <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
     <div class="container">
@@ -67,7 +68,6 @@
         </div>
       </div>
     </div>
-
     <div class='section-sm'>
       <div class="container">
         <div class="row ">
@@ -324,7 +324,7 @@
                   <h6 class='text-left'><span style='color: #32325d87'>From: </span>{{ example.email-properties[0].from }}</h6>
                   <h6 class='text-left'><span style='color: #32325d87'>Subject: </span>{{ example.email-properties[1].subject }}</h6>
                   <hr>
-                  <p class='text-left pt-2'>
+                  <p class='text-left' style='white-space: pre-line'>
                     {{ example.email-properties[2].body }}
                   </p>
                   <hr>
@@ -352,28 +352,36 @@
             <div class="nav-wrapper">
               <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-text" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-text-1-tab" data-toggle="tab" href="#tabs-text-1" role="tab" aria-controls="tabs-text-1" aria-selected="true">DOC</a>
+                  <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-text-1-tab" data-toggle="tab" href="#tabs-text-1" role="tab" aria-controls="tabs-text-1" aria-selected="true">{{ page.sample-payloads[0].payload.type | upcase}}</a>
                 </li>
+                {% if page.sample-payloads[1].payload.type %}
                 <li class="nav-item">
-                  <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab" data-toggle="tab" href="#tabs-text-2" role="tab" aria-controls="tabs-text-2" aria-selected="false">HTA</a>
+                  <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab" data-toggle="tab" href="#tabs-text-2" role="tab" aria-controls="tabs-text-2" aria-selected="false">{{ page.sample-payloads[1].payload.type | upcase}}</a>
                 </li>
+                {% endif %}
+                {% if page.sample-payloads[2].payload.type %}
                 <li class="nav-item">
-                  <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-3-tab" data-toggle="tab" href="#tabs-text-3" role="tab" aria-controls="tabs-text-3" aria-selected="false">Click-Once</a>
+                  <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-3-tab" data-toggle="tab" href="#tabs-text-3" role="tab" aria-controls="tabs-text-3" aria-selected="false">{{ page.sample-payloads[2].payload.type | upcase}}</a>
                 </li>
+                {% endif %}
               </ul>
             </div>
             <div class="card shadow">
               <div class="card-body">
                 <div class="tab-content" id="myTabContent">
                   <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
-                    <p class="description">Word document containing the new policy. Require employees to enable macros in order to "sign" for it. Could dress up the document to look rather legit + include instructions for enabling macros to "sign".</p>
-                    </div>
+                    <p class="description">{{ page.sample-payloads[0].payload.description}}</p>
+                  </div>
+                  {% if page.sample-payloads[1].payload.type %}
                   <div class="tab-pane fade" id="tabs-text-2" role="tabpanel" aria-labelledby="tabs-text-2-tab">
-                    <p class="description">HTA application that shows the employee the policy and then has a page asking them to sign.</p>
+                    <p class="description">{{ page.sample-payloads[1].payload.description}}</p>
                   </div>
+                  {% endif %}
+                  {% if page.sample-payloads[2].payload.type %}
                   <div class="tab-pane fade" id="tabs-text-3" role="tabpanel" aria-labelledby="tabs-text-3-tab">
-                    <p class="description">Similar to the HTA idea. Employee must run the click once application in order to view and then sign the policy.</p>
+                    <p class="description">{{ page.sample-payloads[2].payload.description}}</p>
                   </div>
+                  {% endif %}
                 </div>
               </div>
             </div>
