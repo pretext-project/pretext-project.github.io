@@ -11,7 +11,6 @@ long-description: >
   The social engineer either delivers malware in the form of the "policy" or 
   sends the victim to a phishing page in order to "sign" for the new policy.
 goals:
-  - cred harvesting
   - malware
 methods:
   - email

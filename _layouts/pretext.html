@@ -75,14 +75,44 @@
             <h6 class="info-title text-uppercase text-success pt-2">Methods</h6>
             <div class='card shadow'>
               <div class='card-body'>
-                  
-                    <span class="badge badge-inactive">Phone</span>
-                    <span class="badge badge-success">Email</span>
-                    <span class="badge badge-inactive">SMS</span>
-                    <span class="badge badge-inactive">Voicemail</span>
-                    <span class="badge badge-inactive">Chatbot</span>
-                    <span class="badge badge-inactive">Letter</span>
-                
+              	{% assign methods = page.methods | split: "," | join: "," %} 
+
+              	{% if methods contains "phone" %}
+                    <span class="badge badge-success">phone</span>
+                {% else %}
+                	<span class="badge badge-inactive">phone</span>
+                {% endif %}
+
+                {% if methods contains "email" %}
+                    <span class="badge badge-success">email</span>
+                {% else %}
+                	<span class="badge badge-inactive">email</span>
+                {% endif %}
+
+                {% if methods contains "sms" %}
+                    <span class="badge badge-success">sms</span>
+                {% else %}
+                	<span class="badge badge-inactive">sms</span>
+                {% endif %}
+
+                {% if methods contains "voicemail" %}
+                    <span class="badge badge-success">voicemail</span>
+                {% else %}
+                	<span class="badge badge-inactive">voicemail</span>
+                {% endif %}
+
+                {% if methods contains "chatbot" %}
+                    <span class="badge badge-success">chatbot</span>
+                {% else %}
+                	<span class="badge badge-inactive">chatbot</span>
+                {% endif %}
+
+                {% if methods contains "letter" %}
+                    <span class="badge badge-success">letter</span>
+                {% else %}
+                	<span class="badge badge-inactive">letter</span>
+                {% endif %}
+
               </div>
             </div>
           </div>
@@ -90,26 +120,139 @@
             <h6 class="info-title text-uppercase text-success pt-2">Payloads</h6>
             <div class='card shadow'>
               <div class='card-body'>
-                    <span class="badge badge-inactive">DOC</span>
-                    <span class="badge badge-success">DOCX</span>
-                    <span class="badge badge-inactive">XLS</span>
-                    <span class="badge badge-inactive">XLSX</span>
-                    <span class="badge badge-inactive">PPT</span>
-                    <span class="badge badge-inactive">PPTX</span>
-                    <span class="badge badge-inactive">PDF</span>
-                    <span class="badge badge-inactive">HTA</span>
-                    <span class="badge badge-inactive">EXE</span>
-                    <span class="badge badge-inactive">BAT</span>
-                    <span class="badge badge-inactive">ZIP</span>
-                    <span class="badge badge-inactive">XSS</span>
-                    <span class="badge badge-inactive">CSRF</span>
-                    <span class="badge badge-inactive">Click-Once</span>
-                    <span class="badge badge-inactive">OLE</span>
-                    <span class="badge badge-inactive">Phishing Page</span>
-                    <span class="badge badge-inactive">Drive-by-Download</span>
-                    <span class="badge badge-inactive">USB Drop</span>
-                    <span class="badge badge-inactive">Cloud Hosted File</span>
+              	{% assign payloads = page.payloads | split: "," | join: "," | downcase %}
+              	
+				{% if payloads contains "doc" %}
+					<span class="badge badge-success">doc</span>
+				{% else %}
+					<span class="badge badge-inactive">doc</span>
+				{% endif %}
 
+
+				{% if payloads contains "docx" %}
+					<span class="badge badge-success">docx</span>
+				{% else %}
+					<span class="badge badge-inactive">docx</span>
+				{% endif %}
+
+
+				{% if payloads contains "xls" %}
+					<span class="badge badge-success">xls</span>
+				{% else %}
+					<span class="badge badge-inactive">xls</span>
+				{% endif %}
+
+
+				{% if payloads contains "xlsx" %}
+					<span class="badge badge-success">xlsx</span>
+				{% else %}
+					<span class="badge badge-inactive">xlsx</span>
+				{% endif %}
+
+
+				{% if payloads contains "ppt" %}
+					<span class="badge badge-success">ppt</span>
+				{% else %}
+					<span class="badge badge-inactive">ppt</span>
+				{% endif %}
+
+
+				{% if payloads contains "pptx" %}
+					<span class="badge badge-success">pptx</span>
+				{% else %}
+					<span class="badge badge-inactive">pptx</span>
+				{% endif %}
+
+
+				{% if payloads contains "pdf" %}
+					<span class="badge badge-success">pdf</span>
+				{% else %}
+					<span class="badge badge-inactive">pdf</span>
+				{% endif %}
+
+
+				{% if payloads contains "hta" %}
+					<span class="badge badge-success">hta</span>
+				{% else %}
+					<span class="badge badge-inactive">hta</span>
+				{% endif %}
+
+
+				{% if payloads contains "exe" %}
+					<span class="badge badge-success">exe</span>
+				{% else %}
+					<span class="badge badge-inactive">exe</span>
+				{% endif %}
+
+
+				{% if payloads contains "bat" %}
+					<span class="badge badge-success">bat</span>
+				{% else %}
+					<span class="badge badge-inactive">bat</span>
+				{% endif %}
+
+
+				{% if payloads contains "zip" %}
+					<span class="badge badge-success">zip</span>
+				{% else %}
+					<span class="badge badge-inactive">zip</span>
+				{% endif %}
+
+
+				{% if payloads contains "xss" %}
+					<span class="badge badge-success">xss</span>
+				{% else %}
+					<span class="badge badge-inactive">xss</span>
+				{% endif %}
+
+
+				{% if payloads contains "csrf" %}
+					<span class="badge badge-success">csrf</span>
+				{% else %}
+					<span class="badge badge-inactive">csrf</span>
+				{% endif %}
+
+
+				{% if payloads contains "click-once" %}
+					<span class="badge badge-success">click-once</span>
+				{% else %}
+					<span class="badge badge-inactive">click-once</span>
+				{% endif %}
+
+
+				{% if payloads contains "phishing page" %}
+					<span class="badge badge-success">phishing page</span>
+				{% else %}
+					<span class="badge badge-inactive">phishing page</span>
+				{% endif %}
+
+
+				{% if payloads contains "ole" %}
+					<span class="badge badge-success">ole</span>
+				{% else %}
+					<span class="badge badge-inactive">ole</span>
+				{% endif %}
+
+
+				{% if payloads contains "drive-by-download" %}
+					<span class="badge badge-success">drive-by-download</span>
+				{% else %}
+					<span class="badge badge-inactive">drive-by-download</span>
+				{% endif %}
+
+
+				{% if payloads contains "usb drop" %}
+					<span class="badge badge-success">usb drop</span>
+				{% else %}
+					<span class="badge badge-inactive">usb drop</span>
+				{% endif %}
+
+
+				{% if payloads contains "cloud hosted file" %}
+					<span class="badge badge-success">cloud hosted file</span>
+				{% else %}
+					<span class="badge badge-inactive">cloud hosted file</span>
+				{% endif %}
                     
               </div>
             </div>
@@ -118,11 +261,41 @@
              <h6 class="info-title text-uppercase text-success pt-2">Goals</h6>
               <div class='card shadow'>
                 <div class='card-body'>
-                    <span class="badge badge-inactive">Cred Harvest</span>
-                    <span class="badge badge-success">Malware</span>
-                    <span class="badge badge-inactive">Acct Takeover</span>
-                    <span class="badge badge-inactive">Info Gather</span>
-                    <span class="badge badge-inactive">Funds Transfer</span>
+                {% assign goals = page.goals | split: "," | join: "," | downcase %}
+  	
+                    {% if goals contains "cred harvest" %}
+						<span class="badge badge-success">cred harvest</span>
+					{% else %}
+						<span class="badge badge-inactive">cred harvest</span>
+					{% endif %}
+
+
+					{% if goals contains "malware" %}
+						<span class="badge badge-success">malware</span>
+					{% else %}
+						<span class="badge badge-inactive">malware</span>
+					{% endif %}
+
+
+					{% if goals contains "acct takeover" %}
+						<span class="badge badge-success">acct takeover</span>
+					{% else %}
+						<span class="badge badge-inactive">acct takeover</span>
+					{% endif %}
+
+
+					{% if goals contains "info gather" %}
+						<span class="badge badge-success">info gather</span>
+					{% else %}
+						<span class="badge badge-inactive">info gather</span>
+					{% endif %}
+
+
+					{% if goals contains "funds transfer" %}
+						<span class="badge badge-success">funds transfer</span>
+					{% else %}
+						<span class="badge badge-inactive">funds transfer</span>
+					{% endif %}
                 </div>
               </div>
         </div>
