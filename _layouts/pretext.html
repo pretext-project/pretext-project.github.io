@@ -377,16 +377,16 @@
           <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Text Messages</h6>
           {% endif %}
           {% for script in page.sample-text-messages %}
-          <!-- Example Phone Call -->
-          <div class="row align-items-center mt-4">
+          <!-- Example SMS -->
+          <div class="row align-items-center mt-4 ">
             <div class="col-10 mx-auto">
-              <div class='card shadow'>
+              <div class='card shadow pt-4 pb-4'>
                  <div class='card-body'>
                     <div class='row'>
                       <div class='col-10 col-md-9 mx-auto' style="border: 1px solid #f1f0f1; border-radius: 10px">
                         <div class='row mb-5 align-items-center' style='background: #f1f0f1; border-top-right-radius: 10px; border-top-left-radius: 10px'>
                           <div class='col-12'>
-                            <h3 class='text-center pt-2 pb-2' style='color: #000'>Phishing</h3>
+                            <h3 class='text-center pt-2 pb-2' style='color: #0e0e0e4a'>SMS</h3>
                           </div>
                         </div>
                         <div class='row'>
@@ -410,8 +410,111 @@
               </div>
             </div>
           </div>
-          <!-- End Example Phone Call -->
+          <!-- End Example SMS -->
           {% endfor %}
+
+          {% if page.sample-chatbot-messages %}
+          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Chatbot Messages</h6>
+          {% endif %}
+          {% for script in page.sample-chatbot-messages %}
+          <!-- Example Chatbot -->
+          <div class="row align-items-center mt-4 ">
+            <div class="col-10 mx-auto">
+              <div class='card shadow pt-4 pb-4'>
+                 <div class='card-body'>
+                    <div class='row'>
+                      <div class='col-10 col-md-9 mx-auto' style="border: 1px solid #f1f0f1; border-radius: 10px">
+                        <div class='row mb-5 align-items-center' style='background: #f1f0f1; border-top-right-radius: 10px; border-top-left-radius: 10px'>
+                          <div class='col-12'>
+                            <h3 class='text-center pt-2 pb-2' style='color: #0e0e0e4a'>Chatbot</h3>
+                          </div>
+                        </div>
+                        <div class='row'>
+                        {% for message in script %}
+                          {% for msg in message[1] %}
+                            {% if msg.message[0].from == "victim" %}
+                              <div class="col-10 offset-1 col-md-6 offset-md-1 bubble-left mb-4">
+                              <p class="bubble"> {{msg.message[1].content}}</p>
+                              </div>
+                            {% else %}
+                              <div class="col-10 offset-1 col-md-6 offset-md-5  bubble-right mb-4">
+                               <p class="bubble"> {{msg.message[1].content}} </p>
+                              </div>
+                            {% endif %}
+                          {% endfor %}
+                        {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Example Chatbot -->
+          {% endfor %}
+
+          {% if page.sample-voicemails %}
+          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Voicemails</h6>
+          {% endif %}
+          {% for example in page.sample-voicemails %}
+          <!-- Example Voicemails -->
+          <div class="row align-items-center mt-4">
+            <div class="col-10 mx-auto text-center">
+              <div class='card shadow'>
+                <div class='row'>
+                  <div class="col-md-1 col-2">
+                     <div class='card-body'>
+                        <p class="text-center">
+                          <i class="fa fa-file-audio-o fa-3x"></i>
+                        </p>
+                      </div>
+                  </div>
+                  <div class='col-md-11 col-10'>
+                    <div class='card-body'>
+                        <p class="text-center">
+                          {{example}}
+                        </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Example Voicemails -->
+          {% endfor %}
+
+          {% if page.sample-phone-calls %}
+          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Phone Call Scripts</h6>
+          {% endif %}
+          {% for script in page.sample-phone-calls %}
+          <!-- Example Phone Calls -->
+          <div class="row align-items-center mt-4">
+            <div class="col-10 mx-auto">
+              <div class='card shadow'>
+                <div class="card-body">
+                  {% for message in script %}
+                    {% for msg in message[1] %}
+                     <div class='row pb-2'>
+                      <div class="col-4 col-md-2">
+                        {% if msg.message[0].from == "victim" %}
+                         <p>Victim:</p>
+                        {% else %}
+                         <p>Attacker:</p>
+                        {% endif %}
+                      </div>
+                      <div class="col-8 col-md-10">
+                        {{msg.message[1].content}}
+                      </div>
+                    </div>
+                    {% endfor %}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Example Phone Calls -->
+          {% endfor %}
+
       
 
       </div>
@@ -443,16 +546,16 @@
               <div class="card-body">
                 <div class="tab-content" id="myTabContent">
                   <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
-                    <p class="description">{{ page.sample-payloads[0].payload.description}}</p>
+                    <p class="">{{ page.sample-payloads[0].payload.description}}</p>
                   </div>
                   {% if page.sample-payloads[1].payload.type %}
                   <div class="tab-pane fade" id="tabs-text-2" role="tabpanel" aria-labelledby="tabs-text-2-tab">
-                    <p class="description">{{ page.sample-payloads[1].payload.description}}</p>
+                    <p class="">{{ page.sample-payloads[1].payload.description}}</p>
                   </div>
                   {% endif %}
                   {% if page.sample-payloads[2].payload.type %}
                   <div class="tab-pane fade" id="tabs-text-3" role="tabpanel" aria-labelledby="tabs-text-3-tab">
-                    <p class="description">{{ page.sample-payloads[2].payload.description}}</p>
+                    <p class="">{{ page.sample-payloads[2].payload.description}}</p>
                   </div>
                   {% endif %}
                 </div>
@@ -476,13 +579,15 @@
     <div class="section-sm">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-8 mx-auto text-left">
+          <div class="col-12">
             <h6 class="info-title text-uppercase text-success text-center">Resources</h6>
-            <ul style='word-wrap: break-word; list-style-type: none' class="text-center">
-            	{% for source in page.resources %}
-              	<li><a href="#" target="_blank">{{ source }}</a></li>
-              	{% endfor %}
-            </ul>
+          </div>
+          <div class="col-8 mx-auto align-items-center">
+              <ul style='word-wrap: break-word; list-style-type: none' class="text-center">
+              	{% for source in page.resources %}
+                	<li><p class="lead text-muted" style='padding: 0; margin: 0'><span class="badge badge-primary" style="text-transform: none"><a href="#" target="_blank">{{ source }}</a></span></p></li>
+                	{% endfor %}
+              </ul>
             </div>
           </div>
         </div>

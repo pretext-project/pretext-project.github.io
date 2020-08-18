@@ -81,6 +81,43 @@ sample-text-messages:
     - message:
       - from: attacker
       - content: Oh. Interesting. 
+sample-chatbot-messages:
+  - script:
+    - message:
+      - from: victim
+      - content: Hello, this is John Smith. How may I help you?
+    - message:
+      - from: victim
+      - content: Hello, this is John Smith. How may I help you?
+    - message:
+      - from: attacker
+      - content: Hi, John. This is Dr. Steven Richardson. I'm calling to follow-up on my  patient James Reynolds. Hi, John. This is Dr. Steven Richardson. I'm calling to follow-up on my  patient James Reynolds. 
+    - message:
+      - from: victim
+      - content: I'm sorry. There is no one here by that name. 
+    - message:
+      - from: attacker
+      - content: Oh. Interesting. 
+sample-voicemails:
+  - This is an example voicemail. Describe the message that you'll be leaving and anything in particular that you want to add, like tone, etc. This is just a freeform text placeholder.
+  - This is an example voicemail. Describe the message that you'll be leaving and anything in particular that you want to add, like tone, etc. This is just a freeform text placeholder.
+sample-phone-calls:
+  - script:
+    - message:
+      - from: victim
+      - content: Hi. This is John Smith.
+    - message:
+      - from: attacker
+      - content: Hi John. This is John calling from the IT department. 
+    - message:
+      - from: victim
+      - content: Oh. Hi, John.
+    - message:
+      - from: attacker
+      - content: Before we proceed, can you please verify the last four elements of your employee ID?
+    - message:
+      - from victim
+      - content: What is that again? Is it my employee id number? 8576.
 tags:
   - authority
   - urgency
