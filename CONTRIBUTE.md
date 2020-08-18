@@ -4,9 +4,9 @@ First, thanks for helping out. This is a community-driven project. The more pret
 
 ## Instructions
 
-Pretext Project is based on Jekyll, a static blog site generator. All of the pretexts are located in the /_pretexts/ subfolder. When we deploy the Prext Project site with new updates, Jekyll parses through all of the pretexts and generates a complete static website. This makes life easier since we don't need to rely on a database backend. 
+Pretext Project is based on [Jekyll](https://jekyllrb.com/), a static blog site generator. All of the pretexts are located in the /\_pretexts/ subfolder. When we deploy the Prext Project site with new updates, Jekyll parses through all of the pretexts and generates a complete static website. This makes life easier since we don't need to rely on a database backend. 
 
-When you want to contribute a new pretext, please follow the format listed below. 
+When you want to contribute a new pretext, please create a .md file based on the format listed below. 
 
 ```
 ---
@@ -219,7 +219,7 @@ When in doubt, please just copy/paste from this sheet. You can remove the commen
 
 ## Submitting Pretexts
 
-Please submit a pull request. We'll review ASAP and get it folded into the collection.
+Please submit a pull request adding your .md file to the /\_pretexts/ folder. We'll review ASAP and get it folded into the collection.
 
 ## Questions?
 
