@@ -10,6 +10,8 @@ long-description: >
   require employees to acknowledge their receipt and understanding of the policy. 
   The social engineer either delivers malware in the form of the "policy" or 
   sends the victim to a phishing page in order to "sign" for the new policy.
+analysis: >
+  By sending an urgent task related to sexual harassment, the idea is most folks will feel fully obliged to review it ASAP. Given the nature of the topic, many will not feel comfortable questioning any aspect about it. 
 goals:
   - malware
   - cred harvest
@@ -32,21 +34,53 @@ sample-payloads:
   - payload:
       type: click-once
       description: Similar to the HTA idea. Employee must run the click once application in order to view and then sign the policy.
-examples:
-  - type: email
-    email-properties:
-      - from: Corporate HR
-      - subject: "Action Required: new sexual harassment policy"
-      - body: | 
-          Dear colleagues,
+sample-emails:
+  - email:
+    from: Corporate HR
+    subject: "Action Required: new sexual harassment policy"
+    body: | 
+      Dear colleagues,
 
-          Due to the recent #MeToo movement, our firm has decided to update our sexual harassment policy. All employees are required to abide by these new regulations. To ensure everyone has read them, we require that you download the following policy and electronically sign acknowledging receipt. If you have any questions, please contact the HR department.
+      Due to the recent #MeToo movement, our firm has decided to update our sexual harassment policy. All employees are required to abide by these new regulations. To ensure everyone has read them, we require that you download the following policy and electronically sign acknowledging receipt. If you have any questions, please contact the HR department.
 
-          Thank you,
-          HR
-      - attachments:
-        - attachment.xls
-      - source: https://thissource.com
+      Thank you,
+      HR
+    attachments:
+      - attachment.xls
+    source: https://thissource.com
+  - email:
+    from: Corporate HR
+    subject: "Action Required: new sexual harassment policy"
+    body: | 
+      Dear colleagues,
+
+      Due to the recent #MeToo movement, our firm has decided to update our sexual harassment policy. All employees are required to abide by these new regulations. To ensure everyone has read them, we require that you download the following policy and electronically sign acknowledging receipt. If you have any questions, please contact the HR department.
+
+      Thank you,
+      HR
+    attachments:
+      - attachment.xls
+    source: https://thissource.com
+sample-usb-drops:
+  - This is an example USB drop description. In here, you'd put all the details  about how you'd conduct the USB drop - where, what's on the drive, etc. 
+  - This is an example USB drop description. In here, you'd put all the details  about how you'd conduct the USB drop - where, what's on the drive, etc. 
+sample-text-messages:
+  - script:
+    - message:
+      - from: victim
+      - content: Hello, this is John Smith. How may I help you?
+    - message:
+      - from: victim
+      - content: Hello, this is John Smith. How may I help you?
+    - message:
+      - from: attacker
+      - content: Hi, John. This is Dr. Steven Richardson. I'm calling to follow-up on my  patient James Reynolds. Hi, John. This is Dr. Steven Richardson. I'm calling to follow-up on my  patient James Reynolds. 
+    - message:
+      - from: victim
+      - content: I'm sorry. There is no one here by that name. 
+    - message:
+      - from: attacker
+      - content: Oh. Interesting. 
 tags:
   - authority
   - urgency

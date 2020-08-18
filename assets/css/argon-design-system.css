@@ -1638,6 +1638,123 @@ pre code {
   }
 }
 
+
+/*BUBBLE STYLING*/
+.bubble-left {
+    position: relative;
+    width: 240px;
+    
+    padding: 5px;
+    background: #f1f0f1;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 3px #e7e7e7;
+    font-weight: 700;
+    font-size: 14x;
+    color: #000;
+}
+
+/*.bubble-left:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 15px 15px 15px 0;
+    border-color: transparent #f1f0f1;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-top: -15px;
+    left: -15px;
+    top: 50%;
+}*/
+
+.bubble-left:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: -7px;
+  height: 20px;
+  width: 20px;
+  background: #eee;
+  border-bottom-right-radius: 15px;
+}
+
+.bubble-left:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: -10px;
+  width: 10px;
+  height: 20px;
+  background: white;
+  border-bottom-right-radius: 10px;
+}
+
+.bubble-right {
+    position: relative;
+    width: 240px;
+    
+    padding: 5px;
+    background: #1982FC;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 3px #e7e7e7;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.bubble-right:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  right: -8px;
+  height: 20px;
+  width: 20px;
+  background: linear-gradient(to bottom, #1982FC 0%, #1982FC 100%);
+  background-attachment: fixed;
+  border-bottom-left-radius: 15px;
+}
+
+.bubble-right:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: -10px;
+  width: 10px;
+  height: 20px;
+  background: white;
+  border-bottom-left-radius: 10px;
+}
+
+.bubble {
+  font-size: 1rem;
+  margin: 0 !important; 
+  padding-left: 10px;
+  vertical-align: middle !important;
+}
+
+/*.bubble-right:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent #1982FC;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-top: -15px;
+    right: -15px;
+    top: 50%;
+}*/
+
+
 .table {
   width: 100%;
   margin-bottom: 1rem;
@@ -20416,6 +20533,11 @@ textarea[resize="horizontal"] {
 .section-sm {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.section-xs {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 @media (min-width: 768px) {

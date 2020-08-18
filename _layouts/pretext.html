@@ -107,10 +107,10 @@
                 	<span class="badge badge-inactive">chatbot</span>
                 {% endif %}
 
-                {% if methods contains "letter" %}
-                    <span class="badge badge-success">letter</span>
+                {% if methods contains "usb drop" %}
+                    <span class="badge badge-success">usb drop</span>
                 {% else %}
-                	<span class="badge badge-inactive">letter</span>
+                	<span class="badge badge-inactive">usb drop</span>
                 {% endif %}
 
               </div>
@@ -311,35 +311,108 @@
       </div>
     </div>
   </div>
+  
     <div class="section-sm">
       <div class="container">
       	<h6 class="info-title text-uppercase text-success text-center">Example Emails</h6>
 
-      	{% for example in page.examples %}
-      	<!-- Example Email -->
-        <div class="row align-items-center">
-          <div class="col-lg-10 mx-auto text-center">
-            <div class='card shadow'>
-              <div class='card-body'>
-                  <h6 class='text-left'><span style='color: #32325d87'>From: </span>{{ example.email-properties[0].from }}</h6>
-                  <h6 class='text-left'><span style='color: #32325d87'>Subject: </span>{{ example.email-properties[1].subject }}</h6>
-                  <hr>
-                  <p class='text-left' style='white-space: pre-line'>
-                    {{ example.email-properties[2].body }}
-                  </p>
-                  <hr>
-                  <p class='text-left pt-1 pb-0'>
-                  	{% for attachment in example.email-properties[3].attachments %}
-                    <span class='badge badge-pill badge-info'>{{ attachment }} | X</span>
-                    {% endfor %}
-                  </p>
+      	{% for example in page.sample-emails %}
+
+        	<!-- Example Email -->
+          <div class="row align-items-center mt-4">
+            <div class="col-lg-10 mx-auto text-center">
+              <div class='card shadow'>
+                <div class='card-body'>
+                    <h6 class='text-left'><span style='color: #32325d87'>From: </span>{{ example.from }}</h6>
+                    <h6 class='text-left'><span style='color: #32325d87'>Subject: </span>{{ example.subject }}</h6>
+                    <hr>
+                    <p class='text-left' style='white-space: pre-line'>
+                      {{ example.body }}
+                    </p>
+                    <hr>
+                    <p class='text-left pt-1 pb-0'>
+                    	{% for attachment in example.attachments %}
+                      <span class='badge badge-pill badge-info'>{{ attachment }} | X</span>
+                      {% endfor %}
+                    </p>
+                </div>
+              </div>
+            <p class="text-muted mb-0 pb-0"><b>Source:</b> {{ example.source }}</p>
+            </div>
+          </div>
+          <!-- End Example Email -->
+          {% endfor %}
+
+          {% if page.sample-usb-drops %}
+          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example USB Drops</h6>
+          {% endif %}
+          {% for example in page.sample-usb-drops %}
+          <!-- Example USB Drop -->
+          <div class="row align-items-center mt-4">
+            <div class="col-10 mx-auto text-center">
+              <div class='card shadow'>
+                <div class='row'>
+                  <div class="col-md-1 col-2">
+                     <div class='card-body'>
+                        <p class="text-center">
+                          <i class="fab fa-usb fa-3x"></i>
+                        </p>
+                      </div>
+                  </div>
+                  <div class='col-md-11 col-10'>
+                    <div class='card-body'>
+                        <p class="text-center">
+                          {{example}}
+                        </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          <p class="text-muted mb-0 pb-0"><b>Source:</b> {{ example.email-properties[4].source }}</p>
           </div>
-        </div>
-        <!-- End Example Email -->
-        {% endfor %}
+          <!-- End Example USB Drop -->
+          {% endfor %}
+
+          {% if page.sample-text-messages %}
+          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Text Messages</h6>
+          {% endif %}
+          {% for script in page.sample-text-messages %}
+          <!-- Example Phone Call -->
+          <div class="row align-items-center mt-4">
+            <div class="col-10 mx-auto">
+              <div class='card shadow'>
+                 <div class='card-body'>
+                    <div class='row'>
+                      <div class='col-10 col-md-9 mx-auto' style="border: 1px solid #f1f0f1; border-radius: 10px">
+                        <div class='row mb-5 align-items-center' style='background: #f1f0f1; border-top-right-radius: 10px; border-top-left-radius: 10px'>
+                          <div class='col-12'>
+                            <h3 class='text-center pt-2 pb-2' style='color: #000'>Phishing</h3>
+                          </div>
+                        </div>
+                        <div class='row'>
+                        {% for message in script %}
+                          {% for msg in message[1] %}
+                            {% if msg.message[0].from == "victim" %}
+                              <div class="col-10 offset-1 col-md-6 offset-md-1 bubble-left mb-4">
+                              <p class="bubble"> {{msg.message[1].content}}</p>
+                              </div>
+                            {% else %}
+                              <div class="col-10 offset-1 col-md-6 offset-md-5  bubble-right mb-4">
+                               <p class="bubble"> {{msg.message[1].content}} </p>
+                              </div>
+                            {% endif %}
+                          {% endfor %}
+                        {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Example Phone Call -->
+          {% endfor %}
+      
 
       </div>
     </div>
@@ -389,17 +462,27 @@
         </div>
       </div>
     </div>
+    <div class="section-sm">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-10 mx-auto text-center">
+            <h6 class="info-title text-uppercase text-success">Analysis</h6>
+            <p class="lead text-muted">{{ page.analysis }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div class="section-sm">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-8 mx-auto text-left">
             <h6 class="info-title text-uppercase text-success text-center">Resources</h6>
-            <ol style='word-wrap: break-word'>
+            <ul style='word-wrap: break-word; list-style-type: none' class="text-center">
             	{% for source in page.resources %}
               	<li><a href="#" target="_blank">{{ source }}</a></li>
               	{% endfor %}
-            </ol>
+            </ul>
             </div>
           </div>
         </div>
@@ -413,7 +496,7 @@
           <div class="col-lg-4 mx-auto text-left">
             <p class=" text-muted "><b>Date Added:</b> {{ page.date | date: "%B %-d, %Y" }}</p>
           </div>
-          <div class='col-lg-8 mx-auto text-right'>
+          <div class='col-lg-8 mx-auto'>
             <p class=" text-muted"><b>Contributors:</b> 
             	{% for contributor in page.contributors %}
             	<a href="{{ contributor[1].link }}">@{{ contributor[1].handle }}</a>
