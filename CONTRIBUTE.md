@@ -34,7 +34,7 @@ analysis: >
 # - cred harvest - goal is to capture a user's credentials on a phishing page
 # - info gather - we're just trying to gather information about a company / individual / their computer
 # - acct takeover - goal is takeover a user's account, maybe that's an email account, VPN access, etc.
-# - funds transfer - also called business email compromise; goal is to transfer funds from a target to your account
+# - bec - aka business email compromise; goal is to transfer funds from a target to your account
 # ... have more ideas, feel free to make a pull request
 
 goals: 
