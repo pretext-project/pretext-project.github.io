@@ -100,6 +100,8 @@ sample-payloads:
 # section is just for show and doesn't actually attach a file. If in your pretext, you envision sending an attachment, then provide a name + extension for it, 
 # this way it'll feel more real. Also, if you'd like to provide a source for the email, feel free.
 
+# To add an image, please add it to the /assets/img/pretext-images/ directory. Name the file using the name of this pretext. For example, an image of an email for the pretext saved as "sample-pretext.html", could be called "sample-pretext-email1.png". Save that in the pretext-images file and provide the filename to the "image" attribute below.
+
 sample-emails:
   - email:
     from: Corporate HR
@@ -114,6 +116,10 @@ sample-emails:
     attachments:
       - attachment.xls
     source: https://thissource.com
+
+  - email:
+    image: "sample-pretext-image.png"
+    source: https://source.com
     
 #Sample USB Drops: Pleases just jot down the details of what think the USB drop looks like, how it works, etc. Pretty simple.    
     

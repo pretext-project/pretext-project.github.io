@@ -323,6 +323,9 @@
             <div class="col-lg-10 mx-auto text-center">
               <div class='card shadow'>
                 <div class='card-body'>
+                    {% if example.image %}
+                    <img class='img-fluid' src="/assets/img/pretext-images/{{example.image}}">
+                    {% else %}
                     <h6 class='text-left'><span style='color: #32325d87'>From: </span>{{ example.from }}</h6>
                     <h6 class='text-left'><span style='color: #32325d87'>Subject: </span>{{ example.subject }}</h6>
                     <hr>
@@ -335,9 +338,12 @@
                       <span class='badge badge-pill badge-info'>{{ attachment }} | X</span>
                       {% endfor %}
                     </p>
+                    {% endif %}
                 </div>
               </div>
-            <p class="text-muted mb-0 pb-0"><b>Source:</b> {{ example.source }}</p>
+              {% if example.source %}
+              <p class="text-muted mb-0 pb-0"><b>Source:</b> {{ example.source }}</p>
+              {% endif %}
             </div>
           </div>
           <!-- End Example Email -->
@@ -583,9 +589,9 @@
             <h6 class="info-title text-uppercase text-success text-center">Resources</h6>
           </div>
           <div class="col-8 mx-auto align-items-center">
-              <ul style='word-wrap: break-word; list-style-type: none' class="text-center">
+              <ul style='padding-inline-start: 0px; word-wrap: break-word; list-style-type: none' class="text-center">
               	{% for source in page.resources %}
-                	<li><p class="lead text-muted" style='padding: 0; margin: 0'><span class="badge badge-primary" style="text-transform: none"><a href="#" target="_blank">{{ source }}</a></span></p></li>
+                	<li><p class="lead text-muted" style='padding: 0; margin: 0'><span class="badge badge-primary" style="text-transform: none"><a href="{{ source }}" target="_blank" style='white-space: break-spaces;'>{{ source }}</a></span></p></li>
                 	{% endfor %}
               </ul>
             </div>
