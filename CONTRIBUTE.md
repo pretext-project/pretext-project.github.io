@@ -2,15 +2,18 @@
 
 First, thanks for helping out. This is a community-driven project. The more pretexts folks like you contribute, the more valuable this resource will be for everyone.
 
-## Instructions
+## Easiest Contribution Option (GitHub Issue)
 
-Pretext Project is based on [Jekyll](https://jekyllrb.com/), a static blog site generator. All of the pretexts are located in the /\_pretexts/ subfolder. When we deploy the Prext Project site with new updates, Jekyll parses through all of the pretexts and generates a complete static website. This makes life easier since we don't need to rely on a database backend. 
+Open up a new Issue on GitHub with the label "new pretext". Please add as much detail as you can. The maintainers will format for inclusion into the project.
 
-When you want to contribute a new pretext, please create a .md file based on the format listed below. 
+## Most Helpful Contribution Option (Pull Request)
+
+Pretext Project is based on [Jekyll](https://jekyllrb.com/), a static blog site generator. All of the pretexts are located in the /\_pretexts/ subfolder. When we deploy the Prext Project site with new updates, Jekyll parses through all of the pretexts and automatically generates a complete static website. This makes life easier since we don't need to rely on a database backend. 
+
+When you want to contribute a new pretext, copy an existing .md file from the /\_pretexts/ folder and customize it for your pretext. Then submit it via a pull request. See below for complete pretext file documentation.
 
 ```
 ---
-#Don't change this value
 layout: pretext
 
 title: New Pretext Name
@@ -29,7 +32,7 @@ analysis: >
   why the pretext is effective. What pyschological principles are you drawing on? When will this most 
   pretext most likely work? Etc.
   
-#There are 5 goals the pretext could be used for. The 5 are listed below. Only list the relevant one(s) for your pretext.
+#Goals. There are 5 goals the pretext could be used for. Only list the relevant one(s) for your pretext.
 # - malware - goal is to get the user to execute malware on their system
 # - cred harvest - goal is to capture a user's credentials on a phishing page
 # - info gather - we're just trying to gather information about a company / individual / their computer
@@ -218,14 +221,7 @@ resources:
   - https://www.thissite4.com
 ---
 ```
-
-You'll notice a lot of the headings and values are lowercase. Please default to lowercase, unless you're adding a freeform value, like the title, description, analysis, sample emails, etc.
-
-When in doubt, please just copy/paste from this sheet. You can remove the comments (lines that start with #).
-
-## Submitting Pretexts
-
-Please submit a pull request adding your .md file to the /\_pretexts/ folder. We'll review ASAP and get it folded into the collection.
+Note: you should remove the comments (lines that start with #).
 
 ## Questions?
 

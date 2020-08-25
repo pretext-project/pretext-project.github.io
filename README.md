@@ -1,6 +1,8 @@
 # Pretext Project
 Open-Source Collection of Social Engineering Pretexts. 
 
-Find out more about pretexting and the pretext project at [pretext-project.github.io](https://pretext-project.github.io.). 
+To view the collection of pretexts, visit [pretext-project.github.io](https://pretext-project.github.io.). 
+
+To contribute a pretext, visit [CONTRIBUTE.md](https://github.com/pretext-project/pretext-project.github.io/blob/master/CONTRIBUTE.md)
 
 Maintained by [@joeleonjr](https://twitter.com/joeleonjr).
