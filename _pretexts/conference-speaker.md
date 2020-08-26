@@ -42,26 +42,20 @@ sample-emails:
       ShareFile is a tool for sending, receiving, and organizing your business files online. It can be used as a password-protected area for sharing information with clients and partners, and it's an easy way to send files that are too large to e-mail.
 
       Powered by Citrix ShareFile 2020.
-  - email:
-    image: "citrix-share-file-email1.png"
-    source: https://twitter.com/joeleonjr
-  - email:
-    image: "citrix-share-file-email2.png"
-    source: https://support.citrix.com/article/CTX208306
 tags:
   - intrigue
-  - gossip
-  - Citrix
-  - File share
-  - ShareFile
-  - link
-date: August 23, 2020
+  - ego
+  - conference
+  - speaker
+  - panelist
+  - speech
+date: August 26, 2020
 contributors:
   name:
     handle: joeleonjr
     link: https://twitter.com/joeleonjr
 resources:
-  - https://support.citrix.com/article/CTX208306
+  - https://www.wix.com/website/templates/html/events/conferences-meetups
 ---
 
 
