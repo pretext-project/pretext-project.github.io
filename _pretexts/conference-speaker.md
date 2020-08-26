@@ -41,8 +41,26 @@ sample-emails:
       We're in the process of putting together conference panels and thought the panel on {TOPIC RELATED TO VICTIM} might be of interest. Are you open to discussing being a panelist at our conference?
 
       Please let us know as soon as possible.
-    attachments:
-      - panel.pdf
+sample-phone-calls:
+  - script:
+    - message:
+      - from: victim
+      - content: Hello?
+    - message:
+      - from: attacker 
+      - content: Hi, {TARGET}, this is {FAKE NAME} with the {CONFERENCE NAME} conference. How are you?
+    - message:
+      - from: victim
+      - content: Good... How can I help you?
+    - message:
+      - from: attacker
+      - content: Not sure if you're familiar with {CONFERENCE NAME}, but it's our inagural year running the {CONFERENCE NAME} conference. We're bringing together academic leaders and industry experts to {CONFERENCE PURPOSE}. At the moment, we're looking for speakers and panelists and our search committee stumbled upon your profile. Would you be open to exploring speaking or participating in a panel about {PANEL TOPIC}?
+    - message:
+      - from: victim
+      - content: Maybe.
+    - message:
+      - from: attacker
+      - content: Great. How would you feel about me sending you some more info via email and then setting up some time to discuss in a bit greater detail?
 tags:
   - intrigue
   - ego
