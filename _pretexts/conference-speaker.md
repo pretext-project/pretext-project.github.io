@@ -31,17 +31,16 @@ sample-payloads:
       description: A malicious PDF file with the fake panel information.
 sample-emails:
   - email:
-    from: Documents <TARGET DOMAIN NAME>
-    subject: "You have an encrypted message"
+    from: "{FAKE CONFERENCE NAME} Conference"
+    subject: "panelist for new {INDUSTRY} conference"
     body: | 
+      Hi {FIRST NAME} -
 
-      Download
+      The new {CONFERENCE NAME} conference seeks to bring together industry experts and academics to {CONFERENCE PURPOSE}. 
 
-      Trouble with the above link? You can copy and paste the following URL into your web browser: <PHISHING PAGE LINK>
+      We're in the process of putting together conference panels and thought the panel on {TOPIC RELATED TO VICTIM} might be of interest. Are you open to discussing being a panelist at our conference?
 
-      ShareFile is a tool for sending, receiving, and organizing your business files online. It can be used as a password-protected area for sharing information with clients and partners, and it's an easy way to send files that are too large to e-mail.
-
-      Powered by Citrix ShareFile 2020.
+      Please let us know as soon as possible.
 tags:
   - intrigue
   - ego
