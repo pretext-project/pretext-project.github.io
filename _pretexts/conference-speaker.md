@@ -4,7 +4,7 @@ title: Conference Speaker
 short-description: >
   A new industry conference is looking for speakers/panelists about a topic related to the target's job/expertise.
 long-description: >
-  The attacker creates an entire fake industry conference centered around the target's area of expertise or job title. The attacker then contacts the target, via email or phone, and invites them to participate on a panel or as a speaker. You'll need to conduct sufficient research on the individual to ensure that they would feel qualified enough to speak to a particular topic, so make sure they have sufficient professional experience in that field. It needs to be plausible that they'd be asked to speak, or at least that someone might think they could. This pretext relies heavily on playing to our victim's ego, so be sure to string in little sayings like "your insight", "you can highly recommended", "top of the field", etc. Create a conference website and then the payload could be via document about the conference sent over email or website-based.
+  The attacker creates an entire fake industry conference centered around the target's area of expertise or job title. The attacker then contacts the target, via email or phone, and invites them to participate on a panel or as a speaker. You'll need to conduct sufficient research on the individual to ensure that they would feel qualified enough to speak to a particular topic, so make sure they have sufficient professional experience in that field. It needs to be plausible that they'd be asked to speak, or at least that someone might think they could. This pretext relies heavily on playing to our victim's ego, so be sure to string in little sayings like 'your insight', 'you came highly recommended', 'top of the field', etc. Create a conference website and then the payload could be via document about the conference sent over email or website-based.
 analysis: >
   This pretext plays to the target's ego. The best target is probably someone with a lot of career aspirations that hasn't been recognized yet. 
 goals:
@@ -18,12 +18,11 @@ payloads:
   - doc
   - docx
   - hta
-  - ppt
-  - pptx
+  - pdf
 sample-payloads:
   - payload:
       type: hta
-      description: Fake calendar scheduling HTA to schedule time with the victim to discuss the "panel" you want them to participate on.
+      description: Fake calendar scheduling HTA to schedule time with the victim to discuss the panel you want them to participate on.
   - payload:
       type: drive-by-download
       description: User tries to visit the conference website. This requires building a legitimate looking conference website. Shouldn't be too difficult though, since there are tons of templates out there.
