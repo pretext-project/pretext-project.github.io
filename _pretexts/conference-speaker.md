@@ -17,8 +17,8 @@ payloads:
   - phishing page
   - doc
   - docx
-  - hta
   - pdf
+  - hta
 sample-payloads:
   - payload:
       type: hta
@@ -31,52 +31,37 @@ sample-payloads:
       description: A malicious PDF file with the fake panel information.
 sample-emails:
   - email:
-    from: "{FAKE CONFERENCE NAME} Conference"
-    subject: "panelist for new {INDUSTRY} conference"
+    from: Documents <TARGET DOMAIN NAME>
+    subject: "You have an encrypted message"
     body: | 
-      Hi {FIRST NAME} -
 
-      The new {CONFERENCE NAME} conference seeks to bring together industry experts and academics to {CONFERENCE PURPOSE}. 
+      Download
 
-      We're in the process of putting together conference panels and thought the panel on {TOPIC RELATED TO VICTIM} might be of interest. Are you open to discussing being a panelist at our conference?
+      Trouble with the above link? You can copy and paste the following URL into your web browser: <PHISHING PAGE LINK>
 
-      Please let us know as soon as possible.
-    attachments:
-      - panel.pdf
-sample-phone-calls:
-  - script:
-    - message:
-      - from: victim
-      - content: Hello?
-    - message:
-      - from: attacker 
-      - content: Hi, {TARGET}, this is {FAKE NAME} with the {CONFERENCE NAME} conference. How are you?
-    - message:
-      - from: victim
-      - content: Good... How can I help you?
-    - message:
-      - from: attacker
-      - content: Not sure if you're familiar with {CONFERENCE NAME}, but it's our inagural year running the {CONFERENCE NAME} conference. We're bringing together academic leaders and industry experts to {CONFERENCE PURPOSE}. At the moment, we're looking for speakers and panelists and our search committee stumbled upon your profile. Would you be open to exploring speaking or participating in a panel about {PANEL TOPIC}?
-    - message:
-      - from: victim
-      - content: Maybe.
-    - message:
-      - from: attacker
-      - content: Great. How would you feel about me sending you some more info via email and then setting up some time to discuss in a bit greater detail?
+      ShareFile is a tool for sending, receiving, and organizing your business files online. It can be used as a password-protected area for sharing information with clients and partners, and it's an easy way to send files that are too large to e-mail.
+
+      Powered by Citrix ShareFile 2020.
+  - email:
+    image: "citrix-share-file-email1.png"
+    source: https://twitter.com/joeleonjr
+  - email:
+    image: "citrix-share-file-email2.png"
+    source: https://support.citrix.com/article/CTX208306
 tags:
   - intrigue
-  - ego
-  - conference
-  - speaker
-  - panelist
-  - speech
-date: August 26, 2020
+  - gossip
+  - Citrix
+  - File share
+  - ShareFile
+  - link
+date: August 23, 2020
 contributors:
   name:
     handle: joeleonjr
     link: https://twitter.com/joeleonjr
 resources:
-  - https://www.wix.com/website/templates/html/events/conferences-meetups
+  - https://support.citrix.com/article/CTX208306
 ---
 
 
