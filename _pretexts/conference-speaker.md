@@ -76,7 +76,7 @@ contributors:
   name:
     handle: joeleonjr
     link: https://twitter.com/joeleonjr
-references:
+resources:
   - https://www.wix.com/website/templates/html/events/conferences-meetups
 ---
 
