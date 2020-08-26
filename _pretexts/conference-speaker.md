@@ -41,6 +41,9 @@ sample-emails:
       We're in the process of putting together conference panels and thought the panel on {TOPIC RELATED TO VICTIM} might be of interest. Are you open to discussing being a panelist at our conference?
 
       Please let us know as soon as possible.
+      \-Conference Organizers
+    attachments:
+      - panel.pdf
 tags:
   - intrigue
   - ego
