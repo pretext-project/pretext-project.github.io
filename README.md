@@ -1,6 +1,6 @@
-# Pretext Project
-
 <img src="https://pretext-project.github.io/assets/img/brand/custom1.png" width="50%">
+
+# Pretext Project
 
 Open-Source Collection of Social Engineering Pretexts. 
 
