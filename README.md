@@ -1,6 +1,6 @@
-# ![Pretext Project](https://pretext-project.github.io/assets/img/brand/custom1.png)
+# Pretext Project
 
-
+![Pretext Project](https://pretext-project.github.io/assets/img/brand/custom1.png)
 
 Open-Source Collection of Social Engineering Pretexts. 
 
