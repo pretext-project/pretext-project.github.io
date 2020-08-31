@@ -36,7 +36,7 @@ analysis: >
 # - malware - goal is to get the user to execute malware on their system
 # - cred harvest - goal is to capture a user's credentials on a phishing page
 # - info gather - we're just trying to gather information about a company / individual / their computer
-# - acct takeover - goal is takeover a user's account, maybe that's an email account, VPN access, etc.
+# - physical access - goal is to gain physical access to a location
 # - bec - aka business email compromise; goal is to transfer funds from a target to your account
 # ... have more ideas, feel free to make a pull request
 
@@ -50,7 +50,7 @@ goals:
 # - voicemail - no interaction with user over the phone
 # - chatbot - online ecommerce-style chatbots
 # - sms - text messages
-# - usb drop - dropping a USB device near a target's physical location and hoping they plug it in
+# - physical - in-person at a location
 
 methods:
   - email
@@ -124,10 +124,13 @@ sample-emails:
     image: "sample-pretext-image.png"
     source: https://source.com
     
-#Sample USB Drops: Pleases just jot down the details of what think the USB drop looks like, how it works, etc. Pretty simple.    
+#Sample Physical: Please elaborate on the details of what the physical approach looks like. Attire, attitude and conversation premise.  
     
-sample-usb-drops:
-  - This is an example USB drop description. In here, you'd put all the details  about how you'd conduct the USB drop - where, what's on the drive, etc. 
+sample-physical:
+  - approach
+    attire: wear this
+    attitude: act like this
+    conversation: generally what you'll discuss
  
 #Sample Text Messages: The text message section is broken down by "message". Within each "message", you need to specify who the message is "from" (either 
 # "victim" or "attacker") and what the message is about "content". 

@@ -107,10 +107,10 @@
                 	<span class="badge badge-inactive">chatbot</span>
                 {% endif %}
 
-                {% if methods contains "usb drop" %}
-                    <span class="badge badge-success">usb drop</span>
+                {% if methods contains "physical" %}
+                    <span class="badge badge-success">physical</span>
                 {% else %}
-                	<span class="badge badge-inactive">usb drop</span>
+                	<span class="badge badge-inactive">physical</span>
                 {% endif %}
 
               </div>
@@ -264,38 +264,38 @@
                 {% assign goals = page.goals | split: "," | join: "," | downcase %}
   	
                     {% if goals contains "cred harvest" %}
-						<span class="badge badge-success">cred harvest</span>
-					{% else %}
-						<span class="badge badge-inactive">cred harvest</span>
-					{% endif %}
+          						<span class="badge badge-success">cred harvest</span>
+          					{% else %}
+          						<span class="badge badge-inactive">cred harvest</span>
+          					{% endif %}
 
 
-					{% if goals contains "malware" %}
-						<span class="badge badge-success">malware</span>
-					{% else %}
-						<span class="badge badge-inactive">malware</span>
-					{% endif %}
+          					{% if goals contains "malware" %}
+          						<span class="badge badge-success">malware</span>
+          					{% else %}
+          						<span class="badge badge-inactive">malware</span>
+          					{% endif %}
 
 
-					{% if goals contains "acct takeover" %}
-						<span class="badge badge-success">acct takeover</span>
-					{% else %}
-						<span class="badge badge-inactive">acct takeover</span>
-					{% endif %}
+          					{% if goals contains "physical access" %}
+          						<span class="badge badge-success">physical access</span>
+          					{% else %}
+          						<span class="badge badge-inactive">physical access</span>
+          					{% endif %}
 
 
-					{% if goals contains "info gather" %}
-						<span class="badge badge-success">info gather</span>
-					{% else %}
-						<span class="badge badge-inactive">info gather</span>
-					{% endif %}
+          					{% if goals contains "info gather" %}
+          						<span class="badge badge-success">info gather</span>
+          					{% else %}
+          						<span class="badge badge-inactive">info gather</span>
+          					{% endif %}
 
 
-					{% if goals contains "bec" %}
-						<span class="badge badge-success">bec</span>
-					{% else %}
-						<span class="badge badge-inactive">bec</span>
-					{% endif %}
+          					{% if goals contains "bec" %}
+          						<span class="badge badge-success">bec</span>
+          					{% else %}
+          						<span class="badge badge-inactive">bec</span>
+          					{% endif %}
                 </div>
               </div>
         </div>
@@ -314,7 +314,7 @@
   
     <div class="section-sm">
       <div class="container">
-      	<h6 class="info-title text-uppercase text-success text-center">Example Emails</h6>
+      	<h6 class="info-title text-uppercase text-success text-center">Example Email(s)</h6>
 
       	{% for example in page.sample-emails %}
 
@@ -349,38 +349,27 @@
           <!-- End Example Email -->
           {% endfor %}
 
-          {% if page.sample-usb-drops %}
-          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example USB Drops</h6>
+          {% if page.sample-physical %}
+          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Physical Approach(es)</h6>
           {% endif %}
-          {% for example in page.sample-usb-drops %}
-          <!-- Example USB Drop -->
+          {% for example in page.sample-physical %}
+          <!-- Example Physical Approach -->
           <div class="row align-items-center mt-4">
             <div class="col-10 mx-auto text-center">
-              <div class='card shadow'>
-                <div class='row'>
-                  <div class="col-md-1 col-2">
-                     <div class='card-body'>
-                        <p class="text-center">
-                          <i class="fab fa-usb fa-3x"></i>
-                        </p>
-                      </div>
-                  </div>
-                  <div class='col-md-11 col-10'>
-                    <div class='card-body'>
-                        <p class="text-center">
-                          {{example}}
-                        </p>
-                    </div>
-                  </div>
+              <div class='card shadow'>                
+                <div class='card-body'>
+                  <h6 class='text-left'><span style='color: #32325d87'>Attire: </span>{{ example.attire }}</h6>
+                  <h6 class='text-left'><span style='color: #32325d87'>Attitude: </span>{{ example.attitude }}</h6>
+                  <h6 class='text-left'><span style='color: #32325d87'>Conversation: </span>{{ example.conversation }}</h6>
                 </div>
               </div>
             </div>
           </div>
-          <!-- End Example USB Drop -->
+          <!-- End Example Physical Approach -->
           {% endfor %}
 
           {% if page.sample-text-messages %}
-          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Text Messages</h6>
+          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Text Message(s)</h6>
           {% endif %}
           {% for script in page.sample-text-messages %}
           <!-- Example SMS -->
@@ -420,7 +409,7 @@
           {% endfor %}
 
           {% if page.sample-chatbot-messages %}
-          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Chatbot Messages</h6>
+          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Chatbot Message(s)</h6>
           {% endif %}
           {% for script in page.sample-chatbot-messages %}
           <!-- Example Chatbot -->
@@ -460,7 +449,7 @@
           {% endfor %}
 
           {% if page.sample-voicemails %}
-          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Voicemails</h6>
+          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Voicemail(s)</h6>
           {% endif %}
           {% for example in page.sample-voicemails %}
           <!-- Example Voicemails -->
@@ -490,7 +479,7 @@
           {% endfor %}
 
           {% if page.sample-phone-calls %}
-          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Phone Call Scripts</h6>
+          <h6 class="info-title text-uppercase text-success text-center mt-5 pb-0 mb-0">Example Phone Call Script(s)</h6>
           {% endif %}
           {% for script in page.sample-phone-calls %}
           <!-- Example Phone Calls -->
